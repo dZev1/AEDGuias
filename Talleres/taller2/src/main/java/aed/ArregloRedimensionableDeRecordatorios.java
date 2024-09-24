@@ -2,6 +2,7 @@ package aed;
 
 class ArregloRedimensionableDeRecordatorios {
     private Recordatorio[] recordatorios;
+
     public ArregloRedimensionableDeRecordatorios() {
         this.recordatorios = new Recordatorio[0];
     }
@@ -40,15 +41,15 @@ class ArregloRedimensionableDeRecordatorios {
     }
 
     public void modificarPosicion(int indice, Recordatorio valor) {
-        // Implementar
+        this.recordatorios[indice] = valor;
     }
 
     public ArregloRedimensionableDeRecordatorios(ArregloRedimensionableDeRecordatorios vector) {
-        this.recordatorios = vector.recordatorios;
+        this.recordatorios = vector.recordatorios.clone();
     }
 
     public ArregloRedimensionableDeRecordatorios copiar() {
-        // Implementar
-        return null;
+        ArregloRedimensionableDeRecordatorios res = new ArregloRedimensionableDeRecordatorios(this);
+        return res;
     }
 }
