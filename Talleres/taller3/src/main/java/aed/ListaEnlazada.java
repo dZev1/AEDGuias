@@ -44,7 +44,7 @@ public class ListaEnlazada<T> implements Secuencia<T> {
             this.primero = nuevoNodo;
         }
         else {
-            Nodo ultimo = getNodo(this.longitud - 1);
+            Nodo ultimo = obtenerNodo(this.longitud - 1);
             ultimo.siguiente = nuevoNodo;
             nuevoNodo.anterior = ultimo;
         }
@@ -52,11 +52,11 @@ public class ListaEnlazada<T> implements Secuencia<T> {
     }
 
     public T obtener(int i) {
-        Nodo nodo = getNodo(i);
+        Nodo nodo = obtenerNodo(i);
         return nodo.valor;
     }
 
-    private Nodo getNodo(int i) {
+    private Nodo obtenerNodo(int i) {
         Nodo nodo = primero;
         int j = 0;
         while (j != i) {
@@ -67,7 +67,7 @@ public class ListaEnlazada<T> implements Secuencia<T> {
     }
 
     public void eliminar(int i) {
-        Nodo nodoAEliminar = getNodo(i);
+        Nodo nodoAEliminar = obtenerNodo(i);
 
         if (nodoAEliminar == primero) {
             primero = nodoAEliminar.siguiente;
@@ -85,7 +85,7 @@ public class ListaEnlazada<T> implements Secuencia<T> {
     }
 
     public void modificarPosicion(int indice, T elem) {
-        Nodo nodoAModificar = getNodo(indice);
+        Nodo nodoAModificar = obtenerNodo(indice);
         nodoAModificar.valor = elem;
     }
 
@@ -143,7 +143,7 @@ public class ListaEnlazada<T> implements Secuencia<T> {
         }
 
         public T siguiente() {
-	        T elem = getNodo(this.indice).valor;
+	        T elem = obtenerNodo(this.indice).valor;
             this.indice++;
             return elem;
         }
@@ -151,7 +151,7 @@ public class ListaEnlazada<T> implements Secuencia<T> {
 
         public T anterior() {
             this.indice--;
-            return getNodo(this.indice).valor;
+            return obtenerNodo(this.indice).valor;
         }
     }
 
