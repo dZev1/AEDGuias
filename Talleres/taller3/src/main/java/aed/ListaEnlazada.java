@@ -30,6 +30,11 @@ public class ListaEnlazada<T> implements Secuencia<T> {
         Nodo nodoAux = this.primero;
         this.primero = nodo;
         this.primero.siguiente = nodoAux;
+
+        if (nodoAux != null) {
+            nodoAux.anterior = this.primero;
+        }
+
         this.longitud++;
     }
 
@@ -123,23 +128,30 @@ public class ListaEnlazada<T> implements Secuencia<T> {
     }
 
     private class ListaIterador implements Iterador<T> {
-    	// Completar atributos privados
+        int indice;
+
+        void ListaIterador() {
+            this.indice = 0;
+        }
 
         public boolean haySiguiente() {
-	        throw new UnsupportedOperationException("No implementada aun");
+            return this.indice < longitud();
         }
         
         public boolean hayAnterior() {
-	        throw new UnsupportedOperationException("No implementada aun");
+            return this.indice > 0;
         }
 
         public T siguiente() {
-	        throw new UnsupportedOperationException("No implementada aun");
+	        T elem = getNodo(this.indice).valor;
+            this.indice++;
+            return elem;
         }
         
 
         public T anterior() {
-	        throw new UnsupportedOperationException("No implementada aun");
+            this.indice--;
+            return getNodo(this.indice).valor;
         }
     }
 
