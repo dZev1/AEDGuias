@@ -85,12 +85,41 @@ public class ListaEnlazada<T> implements Secuencia<T> {
     }
 
     public ListaEnlazada(ListaEnlazada<T> lista) {
-        throw new UnsupportedOperationException("No implementada aun");
+        this.longitud = lista.longitud;
+
+        if (this.longitud == 0) {
+            this.primero = new Nodo(null);
+        }
+
+        else {
+            this.primero = new Nodo(lista.primero.valor);
+            Nodo nodoActualNuevo = this.primero;
+            Nodo nodoActualOriginal = lista.primero.siguiente;
+
+            while (nodoActualOriginal != null) {
+                Nodo nuevoNodo = new Nodo(nodoActualOriginal.valor);
+                nodoActualNuevo.siguiente = nuevoNodo;
+                nuevoNodo.anterior = nodoActualNuevo;
+
+                nodoActualNuevo = nuevoNodo;
+                nodoActualOriginal = nodoActualOriginal.siguiente;
+            }
+        }
     }
     
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("No implementada aun");
+        Nodo nodoActual = this.primero;
+        String str = "[";
+        while (nodoActual != null) {
+            str += nodoActual.valor;
+            nodoActual = nodoActual.siguiente;
+            if (nodoActual != null) {
+                str += ", ";
+            }
+        }
+        str += "]";
+        return str;
     }
 
     private class ListaIterador implements Iterador<T> {
@@ -115,7 +144,7 @@ public class ListaEnlazada<T> implements Secuencia<T> {
     }
 
     public Iterador<T> iterador() {
-	    throw new UnsupportedOperationException("No implementada aun");
+	    return new ListaIterador();
     }
 
 }
