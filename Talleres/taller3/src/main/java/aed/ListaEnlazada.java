@@ -1,7 +1,5 @@
 package aed;
 
-import java.util.*;
-
 public class ListaEnlazada<T> implements Secuencia<T> {
 
     private int longitud;
@@ -128,11 +126,7 @@ public class ListaEnlazada<T> implements Secuencia<T> {
     }
 
     private class ListaIterador implements Iterador<T> {
-        int indice;
-
-        void ListaIterador() {
-            this.indice = 0;
-        }
+        private int indice = 0;
 
         public boolean haySiguiente() {
             return this.indice < longitud();
