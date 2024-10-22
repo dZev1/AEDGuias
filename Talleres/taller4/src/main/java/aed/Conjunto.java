@@ -44,10 +44,10 @@ interface Conjunto<T> {
      */
     public String toString();
 
-    /**
+     /**
      * Retorna un conjunto con los mismos elementos
-     * 
+     *
      */
-    // public ABB<T> copiar();
+    //public ABB<T> copiar();
 
 }
