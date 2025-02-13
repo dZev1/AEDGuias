@@ -21,6 +21,8 @@ Hay algunas guías resueltas que no tienen todos los ejercicios resueltos o est�
 |-----------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | [Taller 1](https://github.com/dZev1/AEDGuias/blob/a0311247bfd8efe2a83c57adeea1271660e6a1c3/Talleres/Enunciados/Taller%201.pdf)    | Introducción a Java                                                                         |
 | [Taller 2](https://github.com/dZev1/AEDGuias/blob/a0311247bfd8efe2a83c57adeea1271660e6a1c3/Talleres/Enunciados/Taller%202.pdf)    | Implementación de TADs                                                                      |
+| [Taller 3](https://github.com/dZev1/AEDGuias/blob/47926320952638b06bb67096e71f5c400150d385/Talleres/Enunciados/Taller%203.pdf)    | Lista Doblemente Enlazada                                                                   |
+| [Taller 4](https://github.com/dZev1/AEDGuias/blob/a0311247bfd8efe2a83c57adeea1271660e6a1c3/Talleres/Enunciados/Taller%204.pdf)    | Implementación de Conjuntos con ABB                                                         |
 
 # Eso es todo, tengan buena cursada :) . Recuerden dar feedback!
 <p align="center">
